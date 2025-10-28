@@ -1,9 +1,21 @@
-# add_task.py
-def add_task(task_list, task):
-    task_list.append(task)
-    return task_list
+# view_task.py
 
+def view_tasks(tasks):
+    """
+    Displays all tasks in a list format.
+    If no tasks exist, returns a message.
+    """
+    if not tasks:
+        return "No tasks available."
+    
+    print("---- Task List ----")
+    for i, task in enumerate(tasks, start=1):
+        print(f"{i}. {task}")
+    
+    return "Tasks displayed successfully."
+
+
+# Example usage (you can delete this part later if needed)
 if __name__ == "__main__":
-    tasks = []
-    tasks = add_task(tasks, "Complete XP Lab Task 2")
-    print("Tasks:", tasks)
+    task_list = ["Complete XP Lab", "Write unit tests", "Review code"]
+    view_tasks(task_list)
